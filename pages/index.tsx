@@ -7,14 +7,14 @@ import Footer from "../components/footer";
 
 const Home: NextPage = () => {
   return (
-    <div className={'h-[200vh] font-meiryo'}>
+    <div className={'font-meiryo text-[#383e45]'}>
       <Header />
       <main>
-        <Hero/>
-        <About/>
-        <Bicycle/>
+        <Hero />
+        <About />
+        <Bicycle />
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

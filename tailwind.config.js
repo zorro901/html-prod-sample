@@ -9,6 +9,9 @@ module.exports = {
         'meiryo': ['Meiryo'],
       },
     },
+      screens: {
+          'md': '672px'
+      },
   },
   variants: {
     extend: {},

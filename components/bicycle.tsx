@@ -1,18 +1,21 @@
 import Image from "next/image";
 import { FC } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const Bicycle = () => {
   return (
     <section className={'mx-[30px] flex flex-col items-center'}>
-      <div className={'pt-[86px]'}>
-        <h1
+      <div className={'pt-[100px]'}>
+        <h1 id={'bicycle'}
           className={'text-[32px] font-bold leading-normal tracking-normal text-center underline decoration-[.5px] underline-offset-[12px] mb-[60px]'}>
           Bicycle
         </h1>
       </div>
-      <BicyclePicture bicycleNum={1}/>
-      <BicyclePicture bicycleNum={2}/>
-      <BicyclePicture bicycleNum={3}/>
+      <div className={'md:flex md:space-x-3'}>
+        <BicyclePicture bicycleNum={1} />
+        <BicyclePicture bicycleNum={2} />
+        <BicyclePicture bicycleNum={3} />
+      </div>
     </section>
   );
 }
@@ -21,12 +24,25 @@ type Props = {
   bicycleNum: number;
 };
 
-const BicyclePicture: FC<Props> = ({bicycleNum}) => {
+const BicyclePicture: FC<Props> = ({ bicycleNum }) => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 672px)'
+  })
   return (
     <div className={'flex flex-col justify-center items-center mb-[30px]'}>
-      <Image
-        src={`/assets/bicycle${bicycleNum}.jpg`} height={424} width={640}
-      />
+      {isDesktopOrLaptop ?
+        <Image
+          src={`/assets/bicycle${bicycleNum}.jpg`}
+          // height={424} width={640}
+          height={424/2} width={640/2}
+        />
+        :
+        <Image
+          src={`/assets/bicycle${bicycleNum}.jpg`}
+          height={424} width={640}
+          // height={424/2} width={640/2}
+        />
+      }
       <div className={'flex flex-col'}>
         <h3 className={'mt-4 mb-[10px] text-center font-bold'}>タイトル タイトル</h3>
         <p className={'text-sm'}>テキストテキストテキスト</p>
