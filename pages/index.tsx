@@ -3,6 +3,7 @@ import Header from "../components/header";
 import Hero from "../components/hero";
 import About from "../components/about";
 import Bicycle from "../components/bicycle";
+import Footer from "../components/footer";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
         <About/>
         <Bicycle/>
       </main>
-      <div className={'h-3'}>footer</div>
+      <Footer/>
     </div>
   );
 }
