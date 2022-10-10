@@ -1,18 +1,26 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Header = () => {
   return (
-    <header className={'flex px-[19px] md:px-[37px] justify-between items-center h-[60px]'}>
+    <header
+      className={
+        '' +
+        'flex px-[19px] md:px-[37px] ' +
+        'h-[60px] items-center justify-between'
+      }>
       <div className={'h-[60px]'}>
         <Link href={'/'}>
           <a>
-            <Image src={'/assets/logo.svg'} width={120} height={60}
+            <Image
+              src={'/assets/logo.svg'}
+              width={120}
+              height={60}
             />
           </a>
         </Link>
       </div>
-      <ul className={'flex text-[14.4px] font-meiryo'}>
+      <ul className={'flex font-meiryo text-[14.4px]'}>
         <li className={'ml-[30px]'}>
           <Link href={'/#about'}>
             <a>About</a>
@@ -25,7 +33,7 @@ const Header = () => {
         </li>
       </ul>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header

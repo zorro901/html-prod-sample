@@ -6,15 +6,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'meiryo': ['Meiryo'],
+        meiryo: ['Meiryo'],
       },
     },
-      screens: {
-          'md': '672px'
-      },
+    screens: {
+      md: '672px',
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-};
+}

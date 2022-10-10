@@ -1,13 +1,16 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "next",
     "next/core-web-vitals",
-    "prettier"
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -17,5 +20,48 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"]
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "rules": {
+    "max-len": "warn",
+    "no-mixed-spaces-and-tabs": "error",
+    "key-spacing": "error",
+    "comma-style": "error",
+    "no-unused-vars": "error",
+    "no-extra-bind": "error",
+    "no-implicit-globals": "error",
+    "prefer-promise-reject-errors": "error",
+    "react/react-in-jsx-scope": "off",
+    "camelcase": "error",
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        "markers": ["/ <reference"]
+      }
+    ],
+    "quotes": ["error", "single"],
+    "no-duplicate-imports": "error",
+    "no-unexpected-multiline": "error",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    },
+    "react": {
+      "version": "detect"
+    }
+  }
 }
