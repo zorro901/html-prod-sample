@@ -12,7 +12,7 @@ const About = () => {
             <h1
               id={'about'}
               className={
-                'w-fit border-b-[1px] border-b-black text-center text-[32px] font-bold leading-normal tracking-normal'
+                'w-fit border-b-[1px] border-b-black text-[32px] font-bold leading-normal tracking-normal'
               }>
               About
             </h1>
