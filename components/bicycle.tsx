@@ -9,7 +9,9 @@ const Bicycle = () => {
         <h1
           id={'bicycle'}
           className={
-            'mb-[60px] text-center text-[32px] font-bold leading-normal tracking-normal underline decoration-[.5px] underline-offset-[12px]'
+            'mb-[60px] text-center text-[32px] ' +
+            'font-bold leading-normal tracking-normal ' +
+            'border-b-black border-b-[1px]'
           }>
           Bicycle
         </h1>
@@ -36,16 +38,14 @@ const BicyclePicture: FC<Props> = ({ bicycleNum }) => {
       {isDesktopOrLaptop ? (
         <Image
           src={`/assets/bicycle${bicycleNum}.jpg`}
-          // height={424} width={640}
-          height={424 / 2}
-          width={640 / 2}
+          height={175}
+          width={264}
         />
       ) : (
         <Image
           src={`/assets/bicycle${bicycleNum}.jpg`}
           height={424}
           width={640}
-          // height={424/2} width={640/2}
         />
       )}
       <div className={'flex flex-col'}>
