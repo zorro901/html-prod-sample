@@ -20,7 +20,7 @@ const About = () => {
 
           <div
             className={
-              'mt-[60px] flex min-h-[209px] ' + 'flex-col items-center justify-center md:flex-row md:mt-[27px]'
+              'mt-[60px] flex min-h-[105px] flex-col items-center justify-center md:flex-row md:mt-[60px]'
             }>
             <Image
               style={{ borderRadius: '50%' }}
@@ -29,7 +29,7 @@ const About = () => {
               width={100}
             />
             <div className={'md:ml-[30px]'}>
-              <h3 className={'my-[10px] text-left font-bold'}>KAKERU MIYAICHI</h3>
+              <h2 className={'my-[10px] text-left font-bold'}>KAKERU MIYAICHI</h2>
               <p className={'text-sm md:w-[403px]'}>
                 テキストテキストテキストテキストテキストテキストテキスト
               </p>
