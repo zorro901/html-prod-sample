@@ -7,7 +7,7 @@ const MainVisual = styled.img.attrs<{ customHeight: number }>((props) => ({
   alt: 'main-visual-md',
 }))<{ customHeight: number }>`
   width: 100vw;
-  height: 606px;
+  height: 600px;
   object-fit: cover;
   max-width: 1920px;
 `
