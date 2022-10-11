@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Bicycle = () => {
   return (
     <section className={'mx-[30px] flex flex-col items-center'}>
-      <div className={'pt-[100px]'}>
+      <div className={'pt-[100px] md:pt-[47px]'}>
         <h1
           id={'bicycle'}
           className={

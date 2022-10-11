@@ -20,7 +20,7 @@ const About = () => {
 
           <div
             className={
-              'mt-[60px] flex min-h-[209px] ' + 'flex-col items-center justify-center md:flex-row'
+              'mt-[60px] flex min-h-[209px] ' + 'flex-col items-center justify-center md:flex-row md:mt-[27px]'
             }>
             <Image
               style={{ borderRadius: '50%' }}
