@@ -20,7 +20,7 @@ const About = () => {
 
           <div
             className={
-              'mt-[60px] flex h-[209px] ' + 'flex-col items-center justify-center md:flex-row'
+              'mt-[60px] flex min-h-[209px] ' + 'flex-col items-center justify-center md:flex-row'
             }>
             <Image
               style={{ borderRadius: '50%' }}
@@ -30,11 +30,16 @@ const About = () => {
             />
             <div className={'flex flex-col md:ml-[30px]'}>
               <h3 className={'my-[10px] text-left font-bold'}>KAKERU MIYAICHI</h3>
-              <p className={'w-[403px] text-sm'}>
-                テキストテキストテキストテキストテキストテキストテキスト
-                テキストテキストテキストテキストテキストテキストテキスト
+              <p className={'min-w- md:w-[403px] text-sm'}>
                 テキストテキストテキストテキストテキストテキストテキスト
               </p>
+              <p className={'min-w- md:w-[403px] text-sm'}>
+                テキストテキストテキストテキストテキストテキストテキスト
+              </p>
+              <p className={'min-w- md:w-[403px] text-sm'}>
+                テキストテキストテキストテキストテキストテキストテキスト
+              </p>
+
             </div>
           </div>
         </div>
