@@ -28,18 +28,17 @@ const About = () => {
               height={100}
               width={100}
             />
-            <div className={'flex flex-col md:ml-[30px]'}>
+            <div className={'md:ml-[30px]'}>
               <h3 className={'my-[10px] text-left font-bold'}>KAKERU MIYAICHI</h3>
-              <p className={'min-w- md:w-[403px] text-sm'}>
+              <p className={'text-sm md:w-[403px]'}>
                 テキストテキストテキストテキストテキストテキストテキスト
               </p>
-              <p className={'min-w- md:w-[403px] text-sm'}>
+              <p className={'text-sm md:w-[403px]'}>
                 テキストテキストテキストテキストテキストテキストテキスト
               </p>
-              <p className={'min-w- md:w-[403px] text-sm'}>
+              <p className={'text-sm md:w-[403px]'}>
                 テキストテキストテキストテキストテキストテキストテキスト
               </p>
-
             </div>
           </div>
         </div>
