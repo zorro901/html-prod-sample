@@ -4,6 +4,7 @@ import { useWindowSize } from '../utls/useWindowSize'
 
 const MainVisual = styled.img.attrs<{ customHeight: number }>((props) => ({
   src: props.src,
+  alt: 'main-visual-md',
 }))<{ customHeight: number }>`
   width: 100vw;
   height: 606px;
@@ -13,6 +14,7 @@ const MainVisual = styled.img.attrs<{ customHeight: number }>((props) => ({
 
 const MainVisualSM = styled.img.attrs<{ customHeight: number }>((props) => ({
   src: props.src,
+  alt: 'main-visual-sm',
 }))<{ customHeight: number }>`
   height: calc(${(props) => props.customHeight + 'px'} - 60px);
   object-fit: cover;

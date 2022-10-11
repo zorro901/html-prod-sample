@@ -29,16 +29,18 @@ type Props = {
   bicycleNum: number
 }
 
-const Picture = styled.img.attrs((props) => ({
+const Picture = styled.img.attrs<{ bicycleNum: number }>((props) => ({
   src: props.src,
-}))`
+  alt: `${(props: { bicycleNum: never }) => props.bicycleNum}`,
+}))<{ bicycleNum: number }>`
   object-fit: cover;
   max-height: 175px;
   max-width: 100%;
 `
-const PictureSM = styled.img.attrs((props) => ({
+const PictureSM = styled.img.attrs<{ bicycleNum: number }>((props) => ({
   src: props.src,
-}))`
+  alt: `bicycle-${props.bicycleNum}`,
+}))<{ bicycleNum: number }>`
   object-fit: cover;
   max-width: 100%;
 `
@@ -50,15 +52,18 @@ const BicyclePicture: FC<Props> = ({ bicycleNum }) => {
   return (
     <div className={'mb-[30px] flex flex-col items-center justify-center'}>
       {isDesktopOrLaptop ? (
-        <Picture src={`/assets/bicycle${bicycleNum}.jpg`} />
+        <Picture
+          src={`/assets/bicycle${bicycleNum}.jpg`}
+          bicycleNum={bicycleNum}
+        />
       ) : (
-        <PictureSM src={`/assets/bicycle${bicycleNum}.jpg`} />
+        <PictureSM
+          src={`/assets/bicycle${bicycleNum}.jpg`}
+          bicycleNum={bicycleNum}
+        />
       )}
-
-      <div className={'flex flex-col'}>
-        <h3 className={'mt-4 mb-[10px] text-center font-bold'}>タイトル タイトル</h3>
-        <p className={'text-sm'}>テキストテキストテキスト</p>
-      </div>
+      <h3 className={'mt-4 mb-[10px] text-center font-bold'}>タイトル タイトル</h3>
+      <p className={'text-sm'}>テキストテキストテキスト</p>
     </div>
   )
 }
