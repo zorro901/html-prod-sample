@@ -62,7 +62,7 @@ const BicyclePicture: FC<Props> = ({ bicycleNum }) => {
           bicycleNum={bicycleNum}
         />
       )}
-      <h3 className={'mt-4 mb-[10px] text-center font-bold'}>タイトル タイトル</h3>
+      <h2 className={'mt-4 mb-[10px] text-center font-bold'}>タイトル タイトル</h2>
       <p className={'text-sm'}>テキストテキストテキスト</p>
     </div>
   )
