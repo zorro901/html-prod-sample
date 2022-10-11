@@ -20,14 +20,17 @@ const About = () => {
 
           <div
             className={
-              'mt-[60px] flex min-h-[105px] flex-col items-center justify-center md:flex-row md:mt-[60px]'
+              'mt-[60px] flex h-[209px] min-h-[105px] flex-col items-center md:mt-[60px] md:flex-row'
             }>
-            <Image
-              style={{ borderRadius: '50%' }}
-              src={'/assets/about.jpg'}
-              height={100}
-              width={100}
-            />
+            <div className={'w-[100px]'}>
+              <Image
+                style={{ borderRadius: '50%' }}
+                src={'/assets/about.jpg'}
+                height={100}
+                width={100}
+                alt={'person'}
+              />
+            </div>
             <div className={'md:ml-[30px]'}>
               <h2 className={'my-[10px] text-left font-bold'}>KAKERU MIYAICHI</h2>
               <p className={'text-sm md:w-[403px]'}>
