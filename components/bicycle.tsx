@@ -31,7 +31,7 @@ type Props = {
 
 const Picture = styled.img.attrs<{ bicycleNum: number }>((props) => ({
   src: props.src,
-  alt: `${(props: { bicycleNum: never }) => props.bicycleNum}`,
+  alt: `bicycle-${props.bicycleNum}`,
 }))<{ bicycleNum: number }>`
   object-fit: cover;
   max-height: 175px;

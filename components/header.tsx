@@ -12,6 +12,7 @@ const Header = () => {
                 src={'/assets/logo.svg'}
                 width={120}
                 height={60}
+                alt={'logo'}
               />
             </a>
           </Link>
