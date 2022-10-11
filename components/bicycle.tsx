@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import { FC } from 'react'
 import { useMediaQuery } from 'react-responsive'
+import styled from 'styled-components'
 
 const Bicycle = () => {
   return (
@@ -11,7 +11,7 @@ const Bicycle = () => {
           className={
             'mb-[60px] text-center text-[32px] ' +
             'font-bold leading-normal tracking-normal ' +
-            'border-b-black border-b-[1px]'
+            'border-b-[1px] border-b-black'
           }>
           Bicycle
         </h1>
@@ -29,6 +29,20 @@ type Props = {
   bicycleNum: number
 }
 
+const Picture = styled.img.attrs((props) => ({
+  src: props.src,
+}))`
+  object-fit: cover;
+  max-height: 175px;
+  max-width: 100%;
+`
+const PictureSM = styled.img.attrs((props) => ({
+  src: props.src,
+}))`
+  object-fit: cover;
+  max-width: 100%;
+`
+
 const BicyclePicture: FC<Props> = ({ bicycleNum }) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 672px)',
@@ -36,22 +50,13 @@ const BicyclePicture: FC<Props> = ({ bicycleNum }) => {
   return (
     <div className={'mb-[30px] flex flex-col items-center justify-center'}>
       {isDesktopOrLaptop ? (
-        <Image
-          src={`/assets/bicycle${bicycleNum}.jpg`}
-          height={175}
-          width={264}
-        />
+        <Picture src={`/assets/bicycle${bicycleNum}.jpg`} />
       ) : (
-        <Image
-          src={`/assets/bicycle${bicycleNum}.jpg`}
-          height={424}
-          width={640}
-        />
+        <PictureSM src={`/assets/bicycle${bicycleNum}.jpg`} />
       )}
+
       <div className={'flex flex-col'}>
-        <h3 className={'mt-4 mb-[10px] text-center font-bold'}>
-          タイトル タイトル
-        </h3>
+        <h3 className={'mt-4 mb-[10px] text-center font-bold'}>タイトル タイトル</h3>
         <p className={'text-sm'}>テキストテキストテキスト</p>
       </div>
     </div>

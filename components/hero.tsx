@@ -1,55 +1,43 @@
 import { useMediaQuery } from 'react-responsive'
-import { isMobile } from 'react-device-detect'
+import styled from 'styled-components'
+import { useWindowSize } from '../utls/useWindowSize'
+
+const MainVisual = styled.img.attrs<{ customHeight: number }>((props) => ({
+  src: props.src,
+}))<{ customHeight: number }>`
+  width: 100vw;
+  height: 606px;
+  object-fit: cover;
+  max-width: 1920px;
+`
+
+const MainVisualSM = styled.img.attrs<{ customHeight: number }>((props) => ({
+  src: props.src,
+}))<{ customHeight: number }>`
+  height: calc(${(props) => props.customHeight + 'px'} - 60px);
+  object-fit: cover;
+`
 
 const Hero = () => {
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 672px)',
   })
+  const [, height] = useWindowSize()
   return (
     <div className={'w-full'}>
-      {isDesktopOrLaptop ? <PCImage /> :
-      isMobile ? <SmartPhoneImage /> : <PCImageSmall/>}
+      {isDesktopOrLaptop ? (
+        <MainVisual
+          src={'/assets/mainvisual.jpg'}
+          customHeight={height}
+        />
+      ) : (
+        <MainVisualSM
+          src={'/assets/mainvisual.jpg'}
+          customHeight={height}
+        />
+      )}
     </div>
   )
 }
 
 export default Hero
-
-const PCImage = () => (
-  <img
-    style={{
-      // height: '606px',
-      height: '65vh',
-      width: '100vw',
-      objectFit: 'cover',
-    }}
-    src='/assets/mainvisual.jpg'
-    alt='main-visual-md'
-    height={606}
-    // width={1920}
-  />
-)
-
-const SmartPhoneImage = () => (
-    <img
-      style={{
-        height: '111vh',
-        objectFit: 'cover',
-        objectPosition: '50% 50%',
-      }}
-      src='/assets/mainvisual.jpg'
-      alt='main-visual-sm'
-    />
-)
-
-const PCImageSmall = () => (
-  <img
-    style={{
-      height: '95vh',
-      objectFit: 'cover',
-      objectPosition: '50% 50%'
-    }}
-    src='/assets/mainvisual.jpg'
-    alt='main-visual-sm'
-  />
-)
