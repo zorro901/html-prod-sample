@@ -20,7 +20,7 @@ const About = () => {
 
           <div
             className={
-              'mt-[60px] flex h-[209px] min-h-[105px] flex-col items-center md:mt-[60px] md:flex-row'
+              'mt-[60px] flex h-[209px] md:h-[109px] min-h-[105px] flex-col items-center md:mt-[60px] md:flex-row'
             }>
             <div className={'w-[100px]'}>
               <Image
